@@ -1,5 +1,6 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: imacul/portfolio
   branch: main
 media_folder: "assets/uploads"
 public_folder: "/assets/uploads"
