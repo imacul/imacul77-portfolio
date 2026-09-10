@@ -15,6 +15,7 @@ const DEFAULT_PROJECTS = [
  (async () => {
   const film=window.Film,reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
   let PROJECTS=DEFAULT_PROJECTS;
+  updateFooterYear();
   try {
     const response=await fetch('content/site.json',{cache:'no-cache'});
     if(response.ok){const content=await response.json();if(Array.isArray(content.projects)&&content.projects.length)PROJECTS=content.projects;applyContent(content);}
@@ -62,11 +63,11 @@ const DEFAULT_PROJECTS = [
   document.addEventListener('pointerleave',()=>cursor.classList.remove('is-on'));
 })();
 
-function getContentValue(source,path){return path.split('.').reduce((value,key)=>value?.[key],source);}
+function updateFooterYear(prefix){const element=document.querySelector('[data-content="footer.copyright"]');if(element)element.textContent=(prefix||element.textContent.split(' ©')[0])+' '+String.fromCharCode(169)+' 2021 - '+new Date().getFullYear();}function getContentValue(source,path){return path.split('.').reduce((value,key)=>value?.[key],source);}
 function applyContent(content){
   document.querySelectorAll('[data-content]').forEach(element=>{
     const value=getContentValue(content,element.dataset.content);if(value==null)return;
-    if(element.dataset.content==='about.heading')element.innerHTML=value;else if(element.dataset.content==='footer.copyright')element.textContent=String(value)+' \\u00A9 2021 - '+new Date().getFullYear();else element.textContent=value;
+    if(element.dataset.content==='about.heading')element.innerHTML=value;else if(element.dataset.content==='footer.copyright')element.textContent=String(value)+' '+String.fromCharCode(169)+' 2021 - '+new Date().getFullYear();else element.textContent=value;
   });
   document.querySelectorAll('[data-content-href]').forEach(element=>{const value=getContentValue(content,element.dataset.contentHref);if(value)element.href=value;});
   const footerEmail=document.querySelector('[data-content="footer.email"]');const emailUrl=getContentValue(content,'footer.emailUrl');if(footerEmail&&emailUrl)footerEmail.href=emailUrl;
