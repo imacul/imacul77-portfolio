@@ -63,7 +63,7 @@ const DEFAULT_PROJECTS = [
   document.addEventListener('pointerleave',()=>cursor.classList.remove('is-on'));
 })();
 
-function updateFooterYear(prefix){const element=document.querySelector('[data-content="footer.copyright"]');if(element)element.textContent=(prefix||element.textContent.split(' ©')[0])+' '+String.fromCharCode(169)+' 2021 - '+new Date().getFullYear();}function getContentValue(source,path){return path.split('.').reduce((value,key)=>value?.[key],source);}
+function updateFooterYear(prefix){const element=document.querySelector('[data-content="footer.copyright"]');if(!element)return;const year=new Date().getFullYear(),years=year-2021+1,ordinal=years%100>=11&&years%100<=13?years+'th':years%10===1?years+'st':years%10===2?years+'nd':years%10===3?years+'rd':years+'th';element.textContent=(prefix||element.textContent.split(' ©')[0])+' '+String.fromCharCode(169)+' 2021 - '+year+' · '+ordinal+' year in industry';}
 function applyContent(content){
   document.querySelectorAll('[data-content]').forEach(element=>{
     const value=getContentValue(content,element.dataset.content);if(value==null)return;
