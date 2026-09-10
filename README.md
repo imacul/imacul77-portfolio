@@ -28,7 +28,3 @@ Open <http://127.0.0.1:4173/>.
 - `motion.js` — project data, filters, dialogs, cursor interaction, and audio controls.
 - `styles.css` — layout, typography, responsive behavior, and accessibility states.
 - `assets/logo-imacul.svg` — IMACUL77 monogram favicon and brand mark.
-
-## Credits
-
-The visual direction was studied from [Unseen Studio’s Projects page](https://unseen.co/projects/). The architectural scene, gallery renderer, and refraction shader are original implementation work. The bundled font and ambience file are documented in the source.
