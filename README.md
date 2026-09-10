@@ -1,4 +1,4 @@
-# IMACUL77 — Selected Projects
+# IMACUL77 - Selected Projects
 
 [![Live portfolio](https://img.shields.io/badge/Live%20portfolio-imacul77.vercel.app-171717?style=flat-square)](https://imacul77.vercel.app)
 
@@ -24,7 +24,7 @@ Open <http://127.0.0.1:4173/>.
 
 ## Project structure
 
-- `film.js` — WebGL scene, gallery mesh, refraction, and ambient motion.
-- `motion.js` — project data, filters, dialogs, cursor interaction, and audio controls.
-- `styles.css` — layout, typography, responsive behavior, and accessibility states.
-- `assets/logo-imacul.svg` — IMACUL77 monogram favicon and brand mark.
+- `film.js` - WebGL scene, gallery mesh, refraction, and ambient motion.
+- `motion.js` - project data, filters, dialogs, cursor interaction, and audio controls.
+- `styles.css` - layout, typography, responsive behavior, and accessibility states.
+- `assets/logo-imacul.svg` - IMACUL77 monogram favicon and brand mark.
