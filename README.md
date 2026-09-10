@@ -34,4 +34,4 @@ The gallery rolls over a fixed-radius curve that begins lower in the viewport. I
 
 Content lives in [`content/site.json`](content/site.json). The site loads it at runtime, with built-in defaults if the file cannot be reached.
 
-For a visual editor, open `/admin/` after deploying the repository. The included Decap CMS configuration edits the same JSON file and supports project images, links, categories, hero copy, entry copy, and footer text. Decap is free and Git based. On Netlify, enable Netlify Identity and Git Gateway for the configured `git-gateway` backend; on another host, use Decap's supported Git provider backend and change `admin/config.yml` accordingly.
+For a visual editor, open `/admin/` after deploying the repository. The included Decap CMS configuration edits the same JSON file and supports project images, links, categories, hero copy, entry copy, and footer text. Decap is free and Git based. This deployment uses the GitHub backend and the private `imacul/portfolio` repository. GitHub OAuth credentials may be required for the first CMS login.
