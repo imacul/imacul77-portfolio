@@ -1,16 +1,16 @@
 const DEFAULT_PROJECTS = [
-  {name:'Ice',description:'Live WebGL glass',category:'frontend',href:'https://github.com/imacul/ice',img:'assets/ice.png',color:'#95bfcf'},
-  {name:'Flames',description:'Cinematic fire study',category:'frontend',href:'https://github.com/imacul/flames',img:'assets/flames.png',color:'#ad5f35'},
-  {name:'Air',description:'Wind, pressure, sky',category:'frontend',href:'https://github.com/imacul/air',img:'assets/air.jpg'},
-  {name:'Rock',description:'Gated stone studies',category:'frontend',href:'https://github.com/imacul/rock',img:'assets/rock.jpg'},
-  {name:'Sculpt',description:'Browser-based 3D sculpting',category:'frontend',href:'https://github.com/imacul/sculpt',img:'assets/sculpt.png'},
-  {name:'Mesh Editor',description:'A mesh editing workspace',category:'frontend',href:'https://github.com/imacul/mesh-editor-web',img:'assets/mesh.png'},
-  {name:'MedViz',description:'3D medical mesh editor',category:'fullstack',href:'https://github.com/imacul/medviz-web-editor',img:'assets/medviz.png'},
-  {name:'AnimTheme',description:'A marketplace for motion',category:'fullstack',href:'https://github.com/imacul/animtheme',img:'assets/animtheme.png'},
-  {name:'Atlas',description:'From websites to Figma',category:'fullstack',href:'https://github.com/imacul/atlas-showcase',img:'assets/atlas.png'},
-  {name:'Smileville',description:'Dental review portal',category:'fullstack',href:'https://github.com/imacul/smileville',img:'assets/smileville.png'},
-  {name:'RideWave',description:'Ride hailing · iOS & Android',category:'mobile',href:'https://github.com/imacul/ridewave',img:'assets/ridewave.png'},
-  {name:'Servix',description:'Connecting people and artisans',category:'mobile',href:'https://github.com/imacul/servix',img:'assets/servix.png'}
+  {name:'Ice',description:'Live WebGL glass',category:'frontend',href:'https://github.com/imacul/ice',img:'/assets/ice.png',color:'#95bfcf'},
+  {name:'Flames',description:'Cinematic fire study',category:'frontend',href:'https://github.com/imacul/flames',img:'/assets/flames.png',color:'#ad5f35'},
+  {name:'Air',description:'Wind, pressure, sky',category:'frontend',href:'https://github.com/imacul/air',img:'/assets/air.jpg'},
+  {name:'Rock',description:'Gated stone studies',category:'frontend',href:'https://github.com/imacul/rock',img:'/assets/rock.jpg'},
+  {name:'Sculpt',description:'Browser-based 3D sculpting',category:'frontend',href:'https://github.com/imacul/sculpt',img:'/assets/sculpt.png'},
+  {name:'Mesh Editor',description:'A mesh editing workspace',category:'frontend',href:'https://github.com/imacul/mesh-editor-web',img:'/assets/mesh.png'},
+  {name:'MedViz',description:'3D medical mesh editor',category:'fullstack',href:'https://github.com/imacul/medviz-web-editor',img:'/assets/medviz.png'},
+  {name:'AnimTheme',description:'A marketplace for motion',category:'fullstack',href:'https://github.com/imacul/animtheme',img:'/assets/animtheme.png'},
+  {name:'Atlas',description:'From websites to Figma',category:'fullstack',href:'https://github.com/imacul/atlas-showcase',img:'/assets/atlas.png'},
+  {name:'Smileville',description:'Dental review portal',category:'fullstack',href:'https://github.com/imacul/smileville',img:'/assets/smileville.png'},
+  {name:'RideWave',description:'Ride hailing · iOS & Android',category:'mobile',href:'https://github.com/imacul/ridewave',img:'/assets/ridewave.png'},
+  {name:'Servix',description:'Connecting people and artisans',category:'mobile',href:'https://github.com/imacul/servix',img:'/assets/servix.png'}
 ];
  (async () => {
   const film=window.Film,reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
