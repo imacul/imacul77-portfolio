@@ -2,7 +2,7 @@ backend:
   name: github
   repo: imacul/portfolio
   branch: main
-  base_url: https://portfolio-five-rho-10.vercel.app
+  base_url: https://imacul77.vercel.app
   auth_endpoint: api/begin
 media_folder: "assets/uploads"
 public_folder: "/assets/uploads"
