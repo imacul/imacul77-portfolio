@@ -52,7 +52,7 @@ collections:
               - { label: "Email URL", name: "emailUrl", widget: "string" }
               - { label: "Social label", name: "socialLabel", widget: "string" }
               - { label: "Social URL", name: "socialUrl", widget: "string" }
-              - { label: "Copyright", name: "copyright", widget: "string" }
+              - { label: "Copyright prefix", name: "copyright", widget: "string" }
               - { label: "Services", name: "services", widget: "string" }
               - { label: "Back link", name: "back", widget: "string" }
           - label: "Projects"

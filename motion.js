@@ -66,7 +66,7 @@ function getContentValue(source,path){return path.split('.').reduce((value,key)=
 function applyContent(content){
   document.querySelectorAll('[data-content]').forEach(element=>{
     const value=getContentValue(content,element.dataset.content);if(value==null)return;
-    if(element.dataset.content==='about.heading')element.innerHTML=value;else element.textContent=value;
+    if(element.dataset.content==='about.heading')element.innerHTML=value;else if(element.dataset.content==='footer.copyright')element.textContent=${value} © 2021–;else element.textContent=value;
   });
   document.querySelectorAll('[data-content-href]').forEach(element=>{const value=getContentValue(content,element.dataset.contentHref);if(value)element.href=value;});
   const footerEmail=document.querySelector('[data-content="footer.email"]');const emailUrl=getContentValue(content,'footer.emailUrl');if(footerEmail&&emailUrl)footerEmail.href=emailUrl;
