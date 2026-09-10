@@ -1,37 +1,40 @@
-# IMACUL77 — Selected Projects
+﻿# IMACUL77 — Selected Projects
 
-A local, dependency-free portfolio recreation based on the visual direction of https://unseen.co/projects/.
+[![Live portfolio](https://img.shields.io/badge/Live%20portfolio-imacul77.vercel.app-171717?style=flat-square)](https://imacul77.vercel.app)
+[![CMS](https://img.shields.io/badge/Content-Decap%20CMS-9bb7ff?style=flat-square)](https://imacul77.vercel.app/admin/)
 
-## Preview
+An immersive portfolio for **Emmanuel Oshakpemeh (IMACUL77)**, focused on frontend craft, fullstack systems, mobile products, and motion-led digital experiences.
 
-Run `python -m http.server 4173 --bind 127.0.0.1` from this directory, then open http://127.0.0.1:4173/.
+![IMACUL77 portfolio hero](assets/hero-screenshot.png)
 
-- Scroll or drag with a mouse to explore the gallery.
-- Choose Frontend, Fullstack, or Mobile to filter the projects.
-- Enter with sound, or use the bottom-left button to enable/mute the looping ambience.
-- Index opens the introduction; Contact scrolls to the contact section.
-- Project cards link to the existing GitHub project URLs.
-- Reduced-motion preferences and unavailable WebGL use a normal accessible image grid.
+## Highlights
 
-## Files
+- Liquid, architectural WebGL scene with a curved two-sided project gallery.
+- Responsive project browsing with Frontend, Fullstack, and Mobile filters.
+- Ambient sound with an explicit silent mode and reduced-motion fallback.
+- Accessible image-grid fallback when WebGL is unavailable.
+- Content managed from `content/site.json` through Decap CMS.
 
-`film.js` draws the original architectural scene, animated butterflies, a continuous two-sided gallery mesh with mipmapped textures, and the WebGL refraction pass. `motion.js` holds project data and interaction/audio controls. `styles.css` handles typography, overlays, and responsive layout.
+## Run locally
 
-The previous implementation is preserved in `.backup/`. `water.js` is the previous, unused effect and is not loaded.
+```bash
+python -m http.server 4173 --bind 127.0.0.1
+```
 
-## Reference asset provenance
+Open <http://127.0.0.1:4173/>.
 
-The following assets were downloaded from the observed Unseen page for the requested local recreation. Their ownership remains with their respective owners; no redistribution license is included in this project.
+## Content editing
 
-- `assets/neue-montreal.woff2`: https://unseen.co/wp-content/themes/unseen/resources/assets/fonts/NeueMontreal-Regular.woff2
-- `assets/ambience.webm`: https://unseen.co/wp-content/themes/unseen/resources/assets/audio/audio.webm
+Project cards, hero copy, entry screen text, footer links, and contact details live in [`content/site.json`](content/site.json). The private production repository includes Decap CMS at `/admin/`; the public showcase repository contains the same frontend source for review.
 
-All gallery images, project names, contact details, and GitHub URLs come from the existing portfolio. The architectural background, butterflies, gallery renderer, and refraction shader are new code rather than the reference site's models or source code.
+## Project structure
 
-The gallery rolls over a fixed-radius curve that begins lower in the viewport. Its reverse side remains visible past the crest. Slow full-surface currents animate independently of pointer input; reduced-motion mode remains static.
+- `film.js` — WebGL scene, gallery mesh, refraction, and ambient motion.
+- `motion.js` — project data, filters, dialogs, cursor interaction, and audio controls.
+- `styles.css` — layout, typography, responsive behavior, and accessibility states.
+- `admin/` — Decap CMS configuration and editor shell.
+- `assets/logo-imacul.svg` — IMACUL77 monogram favicon and brand mark.
 
-## Editing without touching code
+## Credits
 
-Content lives in [`content/site.json`](content/site.json). The site loads it at runtime, with built-in defaults if the file cannot be reached.
-
-For a visual editor, open `/admin/` after deploying the repository. The included Decap CMS configuration edits the same JSON file and supports project images, links, categories, hero copy, entry copy, and footer text. Decap is free and Git based. This deployment uses the GitHub backend and the private `imacul/portfolio` repository. GitHub OAuth credentials may be required for the first CMS login.
+The visual direction was studied from [Unseen Studio’s Projects page](https://unseen.co/projects/). The architectural scene, gallery renderer, and refraction shader are original implementation work. The bundled font and ambience file are documented in the source repository.
