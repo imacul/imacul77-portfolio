@@ -14,8 +14,10 @@ export const siteSettings=defineType({
  group('ui','Navigation & interface',[
  str('index','Index label'),str('projects','Projects label'),str('contact','Contact label'),str('all','All filter'),str('frontend','Frontend filter'),str('fullstack','Fullstack filter'),str('mobile','Mobile filter'),str('scroll','Scroll hint'),str('menuEmail','Menu email'),str('menuEmailUrl','Menu email URL')
  ]),
- defineField({name:'audioUrl',title:'Ambient audio URL',type:'url'}),
- defineField({name:'brandIconUrl',title:'Brand icon URL',type:'url'})
+ defineField({name:'audioFile',title:'Upload ambient audio',type:'file'}),
+ defineField({name:'audioUrl',title:'Ambient audio URL (fallback)',type:'url'}),
+ defineField({name:'brandIconFile',title:'Upload brand icon (SVG supported)',type:'file'}),
+ defineField({name:'brandIconUrl',title:'Brand icon URL (fallback)',type:'url'})
  ],
  preview:{select:{title:'brand'}}
 })
