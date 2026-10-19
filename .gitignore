@@ -2,3 +2,7 @@
 
 node_modules/
 output/
+
+node_modules/
+admin/
+.env*

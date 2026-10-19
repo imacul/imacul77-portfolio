@@ -17,8 +17,8 @@ const DEFAULT_PROJECTS = [
   let PROJECTS=DEFAULT_PROJECTS;
   updateFooterYear();
   try {
-    const response=await fetch('content/site.json',{cache:'no-cache'});
-    if(response.ok){const content=await response.json();if(Array.isArray(content.projects)&&content.projects.length)PROJECTS=content.projects;applyContent(content);}
+    const content = await window.loadPortfolioContent();
+    if (content) { if (Array.isArray(content.projects)) PROJECTS=content.projects; applyContent(content); }
   } catch(error){console.info('Using built-in portfolio content.',error);}
   film.setItems(PROJECTS);
   document.querySelectorAll('.filter').forEach(button=>button.addEventListener('click',()=>{
@@ -75,3 +75,20 @@ function applyContent(content){
   const all=document.querySelector('[data-filter="all"] sup');if(all)all.textContent=String(content.projects?.length||0);
   Object.entries(counts).forEach(([category,count])=>{const sup=document.querySelector(`[data-filter="${category}"] sup`);if(sup)sup.textContent=String(count);});
 }
+
+/* CMS-managed static labels, links and meta tags */
+const originalApplyContent = applyContent;
+applyContent = function(content) {
+  originalApplyContent(content);
+  const ui = content.ui || {};
+  document.querySelectorAll('[data-ui]').forEach(node => {
+    const value = ui[node.dataset.ui];
+    if (typeof value === 'string') node.textContent = value;
+  });
+  const seo = content.seo || {};
+  if (seo.title) document.title = seo.title;
+  if (seo.description) document.querySelector('meta[name="description"]')?.setAttribute('content',seo.description);
+  const audio = document.getElementById('ambience');
+  if (audio && content.audioUrl) audio.src = content.audioUrl;
+  if (content.brandIconUrl) document.querySelector('link[rel="icon"]')?.setAttribute('href',content.brandIconUrl);
+};
