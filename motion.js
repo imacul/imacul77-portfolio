@@ -85,6 +85,7 @@ applyContent = function(content) {
     const value = ui[node.dataset.ui];
     if (typeof value === 'string') node.textContent = value;
   });
+  document.querySelectorAll('[data-ui-href]').forEach(node=>{const value=ui[node.dataset.uiHref];if(typeof value==='string')node.href=value;});
   const seo = content.seo || {};
   if (seo.title) document.title = seo.title;
   if (seo.description) document.querySelector('meta[name="description"]')?.setAttribute('content',seo.description);

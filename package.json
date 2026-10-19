@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "sanity dev",
-    "build": "sanity build admin",
+    "build": "node scripts/build.mjs",
     "cms:import": "node scripts/import-content.mjs"
   },
   "dependencies": {
